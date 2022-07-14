@@ -72,6 +72,16 @@ else
     fi
     echo "${GREEN} configuração do database.yml executado com sucesso ${NEUTRO}"
     ############################################################################
+    echo "${YELLOW} configurando pagina inicial ${NEUTRO}"
+    cd $PROJETO
+    if ! rails g controller home index; then
+        echo "${RED} erro ao configurar pagina inicial ${NEUTRO}"
+        exit 1
+    fi
+    cd ..
+    cp -a modelos_de_arquivos/fullstack/routes.rb $PROJETO/config
+    echo "${GREEN} configuração da página inicial executada com sucesso ${NEUTRO}"
+    ############################################################################
     echo
     echo "${GREEN} projeto: [$PROJETO] criado com sucesso ${NEUTRO}"
 fi

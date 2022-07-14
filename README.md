@@ -8,7 +8,7 @@ Adyson Lima
 
 ### Sobre o projeto
 
-Este é um shell script que **cria** e **configura** projetos em Ruby on Rails.
+Este é um shell script que **cria** e **configura** projetos em Ruby on Rails 7.
 
 ### Recursos
 - [X] Cria projeto Ruby on Rails API/FullStack
@@ -16,7 +16,7 @@ Este é um shell script que **cria** e **configura** projetos em Ruby on Rails.
 - [X] Configura projeto para deploy no Heroku
 - [X] Configura template base com Bootstrap
 - [X] Cria modelo para o seeds.rb
-- [X] Configura o PRAWN, GRUFF, Twilio SMS, EMAIL
+- [X] Configura o I18n, PRAWN, GRUFF, Twilio SMS, EMAIL
 
 ### Layout da execução
 <img src="https://github.com/Adyson-Lima-Programador/setup_projeto_rails/blob/main/imagens/appgif.gif" alt="setup.png"/>
