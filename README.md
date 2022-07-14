@@ -19,7 +19,7 @@ Este é um shell script que **cria** e **configura** projetos em Ruby on Rails.
 - [X] Configura o PRAWN, GRUFF, Twilio SMS, EMAIL
 
 ### Layout da execução
-<img src="" alt="setup.png"/>
+<img src="https://github.com/Adyson-Lima-Programador/setup_projeto_rails/blob/main/imagens/appgif.gif" alt="setup.png"/>
 
 ### Tecnologias utilizadas
 
