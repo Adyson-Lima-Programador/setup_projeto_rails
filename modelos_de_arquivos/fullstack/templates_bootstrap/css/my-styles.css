@@ -1,0 +1,92 @@
+.cor-customizada{
+  background-color:rgb(33,191,175);
+  border: none;
+}
+
+.cor-customizada:hover{
+  background-color:rgb(8,140,127);
+  border: none;
+}
+
+.cor-sidebar{
+  background-color:rgb(8,140,127);
+  border: none;
+}
+
+.navbar-customizada{
+  background-color:rgb(8,140,127);
+  color: rgb(255,255,255) !important;
+  text-decoration: none;
+  height: 3rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.link-mysidebar{
+  color: rgb(255,255,255) !important;
+}
+
+.link-mysidebar:hover{
+  background-color:rgba(255,255,255,0.2);
+  color: rgb(255,255,255) !important;
+  transition: background-color 2s;
+}
+
+.pagination a, .pagination span.current, .pagination span.gap {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  color: rgb(8,140,127);
+  background-color: white;
+  border: 1px solid #DDD;
+  border-left-width: 0;
+}
+
+.pagination a:hover, .pagination span.current:hover, .pagination span.gap:hover {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  color: rgb(33,191,175);
+  background-color: white;
+  border: 1px solid #DDD;
+  border-left-width: 0;
+}
+
+.titulo{
+  margin-top: 0.5rem;
+  padding-left: 0.2rem;
+  color: rgb(255,255,255);
+  background-color: rgb(8,140,127);  
+}
+
+.campo{  
+  color: rgb(33,191,175);  
+}
+
+.my-card{
+  color: rgb(255,255,255);
+  background-color: rgb(8,140,127);  
+}
+
+.card-image{
+  width: 51%;
+  display: block;
+  margin: 0px auto;
+}
+
+.form-pesquisa{
+  margin-top: 1rem;  
+}
+
+.centraliza{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-link{
+  margin-right: 0.5%;
+}

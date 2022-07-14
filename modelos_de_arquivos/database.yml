@@ -23,12 +23,12 @@ production:
 
 # development:
 #   <<: *default
-#   database: myclinic_development
+#   database: myapp_development
 
 # test:
 #   <<: *default
-#   database: myclinic_test
+#   database: myapp_test
 
 # production:
 #   <<: *default
-#   database: myclinic_production
+#   database: myapp_production

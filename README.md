@@ -11,7 +11,7 @@ Adyson Lima
 Este é um shell script que **cria** e **configura** projetos em Ruby on Rails.
 
 ### Recursos
-- [X] Cria projeto API/FullStack
+- [X] Cria projeto Ruby on Rails API/FullStack
 - [X] Configura Gemfile
 - [X] Configura projeto para deploy no Heroku
 - [X] Configura template base com Bootstrap

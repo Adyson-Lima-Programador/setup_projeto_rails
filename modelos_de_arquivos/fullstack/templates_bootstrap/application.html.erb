@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyApp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#712cf9">
+   
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag "dashboard", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "estilos-dashboard-adicionais", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "my-styles", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <%= render "shared/navbar" %>
+    <%= yield %>
+  </body>
+</html>
