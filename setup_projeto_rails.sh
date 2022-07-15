@@ -24,6 +24,10 @@ else
         echo "${RED} erro ao criar projeto: $PROJETO ${NEUTRO}"
         exit 1
     fi
+    cd $PROJETO
+    mkdir documentacao
+    cd ..
+    cp -a modelos_de_arquivos/documentacao.txt $PROJETO/documentacao
     ###########################################################################
     echo "${YELLOW} configurando Gemfile ${NEUTRO}"
     rm -rf $PROJETO/Gemfile
@@ -72,7 +76,7 @@ else
     fi
     echo "${GREEN} configuração do database.yml executado com sucesso ${NEUTRO}"
     ############################################################################
-     echo "${YELLOW} configurando rspec ${NEUTRO}"
+    echo "${YELLOW} configurando rspec ${NEUTRO}"
     cd $PROJETO
     rm -rf test
     if ! rails generate rspec:install; then
@@ -86,6 +90,20 @@ else
     rspec
     cd ..
     echo "${GREEN} configuração do rspec executada com sucesso ${NEUTRO}"
+    ############################################################################
+    echo "${YELLOW} configurando seeds.rb ${NEUTRO}"
+    if ! cp -a modelos_de_arquivos/seeds.rb $PROJETO/db; then
+        echo "${RED} erro ao configurar seeds.rb ${NEUTRO}"
+        exit 1
+    fi
+    echo "${GREEN} configuração do seeds.rb executada com sucesso ${NEUTRO}"
+    ############################################################################
+    echo "${YELLOW} configurando I18n ${NEUTRO}"
+    if ! cp -a modelos_de_arquivos/pt-BR.yml $PROJETO/config/locales; then
+        echo "${RED} erro ao configurar I18n ${NEUTRO}"
+        exit 1
+    fi
+    echo "${GREEN} configuração do I18n executada com sucesso ${NEUTRO}"
     ############################################################################
     echo "${YELLOW} configurando pagina inicial ${NEUTRO}"
     cd $PROJETO

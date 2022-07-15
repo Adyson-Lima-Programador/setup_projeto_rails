@@ -1,0 +1,71 @@
+#pt-BR:
+  #date:
+    #formats:
+      #default: "%d/%m/%Y"
+      #long: "%d de %B de %Y"
+      #short: "%d de %B"
+  #confirm: Deseja realmente confirmar esta ação?
+  #links:
+    #new: Novo
+    #show: Visualizar
+    #edit: Editar
+    #destroy: Apagar
+    #back: Voltar
+  #customers:
+    #index:
+      #name: Nome
+      #cell_phone: Telefone
+      #age: Idade
+  #professionals:
+    #index:
+      #name: Nome
+      #cell_phone: Telefone
+      #cpf: CPF
+      #specialty: Especialidade
+    #show:
+      #name: Nome
+      #phone: Telefone
+      #cpf: CPF
+      #email: Email
+  #appointments:
+    #index:
+      #customer_id: Cliente
+      #professional_id: Profissional
+      #date: Data
+      #hour: Hora
+      #category: Tipo consulta
+    #show:
+      #client: Cliente
+      #professional: Profissional
+      #date: Data
+      #hour: Hora
+  #activerecord:
+    #models:
+      #customer:
+        #one: Cliente
+        #other: Clientes
+      #professional:
+        #one: Profissional
+        #other: Profissionais
+      #appointment:
+        #one: Consulta
+        #other: Consultas
+    #attributes:
+      #customer:
+        #name: Nome
+        #cell_phone: Telefone
+        #cpf: CPF
+        #email: Email
+        #age: Idade
+      #professional:
+        #name: Nome
+        #cell_phone: Telefone
+        #cpf: CPF
+        #email: Email
+        #specialty: Especialidade
+      #appointment:
+        #customer_id: Cod. Cliente
+        #professional_id: Cod. Profissional
+        #date: Data
+        #hour: Hora
+        #category: Tipo consulta
