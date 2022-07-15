@@ -72,6 +72,21 @@ else
     fi
     echo "${GREEN} configuração do database.yml executado com sucesso ${NEUTRO}"
     ############################################################################
+     echo "${YELLOW} configurando rspec ${NEUTRO}"
+    cd $PROJETO
+    rm -rf test
+    if ! rails generate rspec:install; then
+        echo "${RED} erro ao configurar rspec ${NEUTRO}"
+        exit 1
+    fi
+    cd ..
+    cp -a modelos_de_arquivos/rspec.txt $PROJETO/.rspec
+    cp -a modelos_de_arquivos/application.rb $PROJETO/config
+    cd $PROJETO
+    rspec
+    cd ..
+    echo "${GREEN} configuração do rspec executada com sucesso ${NEUTRO}"
+    ############################################################################
     echo "${YELLOW} configurando pagina inicial ${NEUTRO}"
     cd $PROJETO
     if ! rails g controller home index; then

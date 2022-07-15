@@ -16,7 +16,7 @@ Este é um shell script que **cria** e **configura** projetos em Ruby on Rails 7
 - [X] Configura projeto para deploy no Heroku
 - [X] Configura template base com Bootstrap
 - [X] Cria modelo para o seeds.rb
-- [X] Configura o I18n, PRAWN, GRUFF, Twilio SMS, EMAIL
+- [X] Configura o RSPEC, I18n, PRAWN, GRUFF, Twilio SMS, ACTION_MAILER
 
 ### Layout da execução
 <img src="https://github.com/Adyson-Lima-Programador/setup_projeto_rails/blob/main/imagens/appgif.gif" alt="setup.png"/>
