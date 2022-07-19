@@ -69,7 +69,17 @@ if [ $TIPO = "s" ]; then
     fi
     echo "${GREEN} configuração do JWT executada com sucesso ${NEUTRO}"
     ############################################################################
-    
+    echo "${YELLOW} configurando TWILIO SMS ${NEUTRO}"
+    cd $PROJETO/app
+    mkdir services
+    cd ..
+    cd ..
+    if ! cp -a modelos_de_arquivos/sms_twilio/send_sms.rb $PROJETO/app/services | cp -a modelos_de_arquivos/sms_twilio/modelo_sms_controller.rb $PROJETO/app/controllers; then
+        echo "${RED} erro ao configurar TWILIO SMS ${NEUTRO}"
+        exit 1
+    fi
+    echo "${GREEN} configuração do TWILIO SMS executada com sucesso ${NEUTRO}"
+    ############################################################################
 
 
 
