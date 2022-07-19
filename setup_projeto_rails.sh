@@ -123,12 +123,12 @@ else
     fi
     echo "${GREEN} configuração do GRUFF executada com sucesso ${NEUTRO}"
     ############################################################################
-    # echo "${YELLOW} configurando TWILIO SMS ${NEUTRO}"
-    # if ! cp -a modelos_de_arquivos/pt-BR.yml $PROJETO/config/locales; then
-    #     echo "${RED} erro ao configurar TWILIO SMS ${NEUTRO}"
-    #     exit 1
-    # fi
-    # echo "${GREEN} configuração do TWILIO SMS executada com sucesso ${NEUTRO}"
+    echo "${YELLOW} configurando TWILIO SMS ${NEUTRO}"
+    if ! cp -a modelos_de_arquivos/sms_twilio/send_sms.rb $PROJETO/app/services | cp -a modelos_de_arquivos/sms_twilio/modelo_sms_controller.rb $PROJETO/app/controllers; then
+        echo "${RED} erro ao configurar TWILIO SMS ${NEUTRO}"
+        exit 1
+    fi
+    echo "${GREEN} configuração do TWILIO SMS executada com sucesso ${NEUTRO}"
     ############################################################################
     # echo "${YELLOW} configurando ACTION MAILER ${NEUTRO}"
     # if ! cp -a modelos_de_arquivos/pt-BR.yml $PROJETO/config/locales; then
