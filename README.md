@@ -44,7 +44,7 @@ sh setup_projeto_rails.sh
 
 # Depois de criar o projeto, editar o nome no modulo em config/application.rb para o nome do projeto, seguindo o padrão:
 # A inicial e cada inicial depois de underline são escritas em maiúsculo, exemplo:
-# rails new meu_novo_projeto -- api
+# rails new meu_novo_projeto --api
 # deve ser feita a edição para: MeuNovoProjeto 
 
 ```
