@@ -112,12 +112,16 @@ else
     fi
     echo "${GREEN} configuração do PRAWN executada com sucesso ${NEUTRO}"
     ############################################################################
-    # echo "${YELLOW} configurando GRUFF ${NEUTRO}"
-    # if ! cp -a modelos_de_arquivos/pt-BR.yml $PROJETO/config/locales; then
-    #     echo "${RED} erro ao configurar GRUFF ${NEUTRO}"
-    #     exit 1
-    # fi
-    # echo "${GREEN} configuração do GRUFF executada com sucesso ${NEUTRO}"
+    echo "${YELLOW} configurando GRUFF ${NEUTRO}"
+    cd $PROJETO/app
+    mkdir services
+    cd ..
+    cd ..
+    if ! cp -a modelos_de_arquivos/graficos/charts.rb $PROJETO/app/services | cp -a modelos_de_arquivos/graficos/chart_controller.rb $PROJETO/app/controllers | cp -a modelos_de_arquivos/graficos/chart.html.erb $PROJETO/app/views; then
+        echo "${RED} erro ao configurar GRUFF ${NEUTRO}"
+        exit 1
+    fi
+    echo "${GREEN} configuração do GRUFF executada com sucesso ${NEUTRO}"
     ############################################################################
     # echo "${YELLOW} configurando TWILIO SMS ${NEUTRO}"
     # if ! cp -a modelos_de_arquivos/pt-BR.yml $PROJETO/config/locales; then
