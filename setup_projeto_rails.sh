@@ -130,13 +130,6 @@ else
     fi
     echo "${GREEN} configuração do TWILIO SMS executada com sucesso ${NEUTRO}"
     ############################################################################
-    # echo "${YELLOW} configurando ACTION MAILER ${NEUTRO}"
-    # if ! cp -a modelos_de_arquivos/pt-BR.yml $PROJETO/config/locales; then
-    #     echo "${RED} erro ao configurar ACTION MAILER ${NEUTRO}"
-    #     exit 1
-    # fi
-    # echo "${GREEN} configuração do ACTION MAILER executada com sucesso ${NEUTRO}"
-    ############################################################################
     echo "${YELLOW} configurando pagina inicial ${NEUTRO}"
     cd $PROJETO
     if ! rails g controller home index; then
