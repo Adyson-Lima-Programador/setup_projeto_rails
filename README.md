@@ -6,7 +6,7 @@ Adyson Lima. <a href="https://www.linkedin.com/in/adyson-lima-programador/">Meu 
 
 ### Sobre o projeto
 
-Este é um shell script que **cria** e **configura** projetos em Ruby on Rails 7.
+Este é um shell script que **cria** e **configura** projetos de API's e projetos fullstack em Ruby on Rails 7.
 
 ### Recursos para aplicações fullstack
 - [X] Cria projeto
