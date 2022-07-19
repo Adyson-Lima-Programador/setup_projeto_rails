@@ -17,6 +17,54 @@ if [ $TIPO = "s" ]; then
         echo "${RED} erro ao criar api: $PROJETO ${NEUTRO}"
         exit 1
     fi
+    cd $PROJETO
+    mkdir documentacao
+    cd ..
+    cp -a modelos_de_arquivos/documentacao.txt $PROJETO/documentacao
+    ###########################################################################
+    echo "${YELLOW} configurando Gemfile ${NEUTRO}"
+    rm -rf $PROJETO/Gemfile
+    if ! cp -a modelos_de_arquivos/api/Gemfile $PROJETO; then
+        echo "${RED} erro ao configurar Gemfile ${NEUTRO}"
+        exit 1
+    fi
+    cd $PROJETO
+    bundle install
+    cd ..
+    echo "${GREEN} configuração do Gemfile executada com sucesso ${NEUTRO}"
+    ############################################################################
+     echo "${YELLOW} configurando database.yml ${NEUTRO}"
+    if ! cp -a modelos_de_arquivos/database.yml $PROJETO/config; then
+        echo "${RED} erro ao configurar database.yml ${NEUTRO}"
+        exit 1
+    fi
+    echo "${GREEN} configuração do database.yml executado com sucesso ${NEUTRO}"
+    ############################################################################
+    echo "${YELLOW} configurando rspec ${NEUTRO}"
+    cd $PROJETO
+    rm -rf test
+    if ! rails generate rspec:install; then
+        echo "${RED} erro ao configurar rspec ${NEUTRO}"
+        exit 1
+    fi
+    cd ..
+    cp -a modelos_de_arquivos/rspec.txt $PROJETO/.rspec
+    cp -a modelos_de_arquivos/api/application.rb $PROJETO/config
+    cd $PROJETO
+    rspec
+    cd ..
+    echo "${GREEN} configuração do rspec executada com sucesso ${NEUTRO}"
+    ############################################################################
+    echo "${YELLOW} configurando seeds.rb ${NEUTRO}"
+    if ! cp -a modelos_de_arquivos/seeds.rb $PROJETO/db; then
+        echo "${RED} erro ao configurar seeds.rb ${NEUTRO}"
+        exit 1
+    fi
+    echo "${GREEN} configuração do seeds.rb executada com sucesso ${NEUTRO}"
+    ############################################################################
+
+
+
     echo "${GREEN} api: [$PROJETO] criada com sucesso ${NEUTRO}"
 else
     echo "${YELLOW} criando projeto: $PROJETO "
@@ -85,7 +133,7 @@ else
     fi
     cd ..
     cp -a modelos_de_arquivos/rspec.txt $PROJETO/.rspec
-    cp -a modelos_de_arquivos/application.rb $PROJETO/config
+    cp -a modelos_de_arquivos/fullstack/application.rb $PROJETO/config
     cd $PROJETO
     rspec
     cd ..
@@ -99,14 +147,14 @@ else
     echo "${GREEN} configuração do seeds.rb executada com sucesso ${NEUTRO}"
     ############################################################################
     echo "${YELLOW} configurando I18n ${NEUTRO}"
-    if ! cp -a modelos_de_arquivos/pt-BR.yml $PROJETO/config/locales; then
+    if ! cp -a modelos_de_arquivos/fullstack/pt-BR.yml $PROJETO/config/locales; then
         echo "${RED} erro ao configurar I18n ${NEUTRO}"
         exit 1
     fi
     echo "${GREEN} configuração do I18n executada com sucesso ${NEUTRO}"
     ############################################################################
     echo "${YELLOW} configurando PRAWN ${NEUTRO}"
-    if ! cp -a modelos_de_arquivos/show.pdf.prawn $PROJETO/app/views; then
+    if ! cp -a modelos_de_arquivos/fullstack/show.pdf.prawn $PROJETO/app/views; then
         echo "${RED} erro ao configurar PRAWN ${NEUTRO}"
         exit 1
     fi
@@ -117,7 +165,7 @@ else
     mkdir services
     cd ..
     cd ..
-    if ! cp -a modelos_de_arquivos/graficos/charts.rb $PROJETO/app/services | cp -a modelos_de_arquivos/graficos/chart_controller.rb $PROJETO/app/controllers | cp -a modelos_de_arquivos/graficos/chart.html.erb $PROJETO/app/views; then
+    if ! cp -a modelos_de_arquivos/fullstack/graficos/charts.rb $PROJETO/app/services | cp -a modelos_de_arquivos/fullstack/graficos/chart_controller.rb $PROJETO/app/controllers | cp -a modelos_de_arquivos/fullstack/graficos/chart.html.erb $PROJETO/app/views; then
         echo "${RED} erro ao configurar GRUFF ${NEUTRO}"
         exit 1
     fi
