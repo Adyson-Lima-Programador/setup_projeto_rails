@@ -80,12 +80,22 @@ if [ $TIPO = "s" ]; then
     fi
     echo "${GREEN} configuração do TWILIO SMS executada com sucesso ${NEUTRO}"
     ############################################################################
-
-
-
-
-
+    echo "${YELLOW} configurando RACK-CORS ${NEUTRO}"
+    if ! cp -a modelos_de_arquivos/api/cors.rb $PROJETO/config/initializers; then
+        echo "${RED} erro ao configurar RACK-CORS ${NEUTRO}"
+        exit 1
+    fi
+    echo "${GREEN} configuração do RACK-CORS executada com sucesso ${NEUTRO}"
+    ############################################################################
+    echo "${YELLOW} configurando RACK-ATTACK ${NEUTRO}"
+    if ! cp -a modelos_de_arquivos/api/rack_attack.rb $PROJETO/config/initializers; then
+        echo "${RED} erro ao configurar RACK-ATTACK ${NEUTRO}"
+        exit 1
+    fi
+    echo "${GREEN} configuração do RACK-ATTACK executada com sucesso ${NEUTRO}"
+    ############################################################################
     echo "${GREEN} api: [$PROJETO] criada com sucesso ${NEUTRO}"
+    ######################## Fim da Configuração da API ########################
 else
     echo "${YELLOW} criando projeto: $PROJETO "
     if ! rails new $PROJETO -c bootstrap; then
