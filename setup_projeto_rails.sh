@@ -62,6 +62,16 @@ if [ $TIPO = "s" ]; then
     fi
     echo "${GREEN} configuração do seeds.rb executada com sucesso ${NEUTRO}"
     ############################################################################
+    echo "${YELLOW} configurando JWT ${NEUTRO}"
+    if ! cp -a modelos_de_arquivos/api/application_controller.rb $PROJETO/app/controllers; then
+        echo "${RED} erro ao configurar JWT ${NEUTRO}"
+        exit 1
+    fi
+    echo "${GREEN} configuração do JWT executada com sucesso ${NEUTRO}"
+    ############################################################################
+    
+
+
 
 
 
